@@ -1,8 +1,6 @@
-import { Col, Container, Row } from "react-bootstrap";
-import "../styles/Wrapper.css";
-import Right from "./Right";
-import Left from "./left";
+import { Container } from "react-bootstrap";
 import SearchInput from "./SearchInput";
+import Info from "./Info";
 import { useContext } from "react";
 import { WeatherContext } from "../context/WeatherProvider";
 
@@ -13,16 +11,7 @@ const Wrapper = () => {
     <div className="wrapper py-5">
       <Container>
         <SearchInput />
-        {weather.length !== 0 && (
-          <Row className="mt-4">
-            <Col md={4}>
-              <Left />
-            </Col>
-            <Col md={8}>
-              <Right />
-            </Col>
-          </Row>
-        )}
+        {weather.length !== 0 && <Info />}
       </Container>
     </div>
   );

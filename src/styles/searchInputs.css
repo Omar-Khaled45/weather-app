@@ -1,0 +1,33 @@
+form .input-group input {
+  padding: 10px;
+  background-color: var(--main-bg);
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  color: var(--Primary-text-color);
+}
+form .input-group input:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: var(--main-bg);
+  color: var(--Primary-text-color);
+}
+form .input-group input::placeholder {
+  color: #a5a5a5;
+}
+form .input-group button,
+form .input-group button:active {
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  background-color: var(--main-bg);
+  color: #a5a5a5;
+}
+form .input-group button:hover,
+form .input-group button:focus {
+  background-color: #273447;
+  box-shadow: none;
+  color: #a5a5a5;
+}

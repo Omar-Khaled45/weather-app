@@ -1,0 +1,78 @@
+.info .main-info {
+  padding: 10px 25px;
+}
+.info .main-info .text h2 {
+  font-size: 40px;
+}
+.info .main-info .text .degree {
+  font-size: 50px;
+  font-weight: bold;
+}
+.info .main-info .text .description {
+  font-size: 20px;
+}
+/* Start Today Forecast */
+.info .today-forecast,
+.info .air-conditions,
+.info .seven-days {
+  background-color: var(--main-bg);
+  border-radius: 14px;
+}
+.info .today-forecast .list {
+  overflow-x: auto;
+}
+.info .today-forecast .list div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 0 30px;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .info .today-forecast .list div h5 {
+    font-size: 14px;
+  }
+}
+.info .today-forecast .list div:not(:last-child) {
+  border-right: 1px solid #324058;
+}
+.info .today-forecast .list div span {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: yellow;
+}
+/* End Today Forecast */
+/* Start Air Conditions */
+.info .air-conditions .condition p {
+  font-size: 24px;
+}
+@media (min-width: 768px) {
+  .info .air-conditions .condition svg {
+    font-size: 24px;
+  }
+  .info .air-conditions .condition p {
+    font-size: 35px;
+  }
+}
+/* End Air Conditions */
+/* Start 7-Days Forecast */
+.info .seven-days {
+  padding: 40px 40px 20px;
+}
+.info .seven-days ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info .seven-days ul li:not(:last-child) {
+  padding: 22px 0;
+  border-bottom: 1px solid #324058;
+}
+.info .seven-days ul li:last-child {
+  padding-top: 22px;
+}
+/* End 7-Days Forecast */

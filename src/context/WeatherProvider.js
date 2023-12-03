@@ -4,11 +4,19 @@ export const WeatherContext = createContext();
 
 const WeatherProvider = ({ children }) => {
   const [weather, setWeather] = useState([]);
-  const [forecast, setForecast] = useState({});
+  const [hourlyForecast, setHourlyForecast] = useState({});
+  const [dailyForecast, setDailyForecast] = useState({});
 
   return (
     <WeatherContext.Provider
-      value={{ weather, setWeather, forecast, setForecast }}
+      value={{
+        weather,
+        setWeather,
+        hourlyForecast,
+        setHourlyForecast,
+        dailyForecast,
+        setDailyForecast,
+      }}
     >
       {children}
     </WeatherContext.Provider>
