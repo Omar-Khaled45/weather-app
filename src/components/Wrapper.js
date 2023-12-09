@@ -11,7 +11,7 @@ const Wrapper = () => {
     <div className="wrapper py-5">
       <Container>
         <SearchInput />
-        {weather.length !== 0 && <Info />}
+        {weather && <Info />}
       </Container>
     </div>
   );
