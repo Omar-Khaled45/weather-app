@@ -7,6 +7,7 @@ const WeatherProvider = ({ children }) => {
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [dailyForecast, setDailyForecast] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   return (
     <WeatherContext.Provider
@@ -19,6 +20,8 @@ const WeatherProvider = ({ children }) => {
         setDailyForecast,
         error,
         setError,
+        loading,
+        setLoading,
       }}
     >
       {children}

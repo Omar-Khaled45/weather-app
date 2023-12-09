@@ -1,3 +1,11 @@
+/* Start Alert */
+.alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+/* End Alert */
 .info .main-info {
   padding: 10px 25px;
 }

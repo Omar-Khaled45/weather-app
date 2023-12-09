@@ -8,8 +8,13 @@ import { WeatherContext } from "../context/WeatherProvider";
 const SearchInput = () => {
   const [value, setValue] = useState("");
 
-  const { setWeather, setHourlyForecast, setDailyForecast, setError } =
-    useContext(WeatherContext);
+  const {
+    setWeather,
+    setHourlyForecast,
+    setDailyForecast,
+    setError,
+    setLoading,
+  } = useContext(WeatherContext);
 
   // Handle Search For City Name
   const handleSearch = () => {
@@ -19,16 +24,24 @@ const SearchInput = () => {
       )
         .then((res) => {
           if (!res.ok) {
-            throw new Error("City not Found");
+            throw new Error("City Not Found or Other API Error");
           }
 
           return res.json();
         })
         .then((data) => {
           setWeather(data);
+
+          setLoading(false);
+
+          setError(null);
         })
         .catch((error) => {
-          setError(error);
+          console.error("Error Fetching Hourly Data:", error);
+
+          setError("City Not Found");
+
+          setLoading(false);
         });
 
       fetch(
@@ -36,7 +49,7 @@ const SearchInput = () => {
       )
         .then((res) => {
           if (!res.ok) {
-            throw new Error("City Not Found");
+            throw new Error("City Not Found or Other API Error");
           }
 
           return res.json();
@@ -58,21 +71,31 @@ const SearchInput = () => {
           }, []);
 
           setDailyForecast(dailyData);
+          setLoading(false);
+          setError(null);
         })
         .catch((error) => {
-          setError(error);
+          console.error("Error Fetching Daily Data:", error);
+
+          setError("City Not Found");
+
+          setLoading(false);
         });
     }
   };
 
   // Handle Click on Search Button
   const handleClick = () => {
+    setLoading(true);
+    setError(null);
     handleSearch();
   };
 
   // Handle Click on Enter Key
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
+      setLoading(true);
+      setError(null);
       handleSearch();
     }
   };
